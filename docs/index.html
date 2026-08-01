@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Integrated Autonomous Intelligence — a nine-laboratory teaching and research journey developed by Alejandro Reynoso in the context of his teaching at Cambridge Judge Business School.">
+  <title>Integrated Autonomous Intelligence | The Autonomous System Sandbox</title>
+  <style>
+    :root {
+      --navy:#071d35; --blue:#123f68; --ink:#152231; --muted:#607080;
+      --paper:#f7f5ef; --white:#fff; --gold:#c9a34c; --gold-soft:#e7d49a;
+      --line:#d9d5ca; --soft:#edf2f5; --shadow:0 16px 42px rgba(7,29,53,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Inter,"Segoe UI",Arial,sans-serif}
+    a{color:inherit}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .top{position:sticky;top:0;z-index:20;background:rgba(7,29,53,.97);backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
+    .top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:66px;gap:20px}
+    .brand{font:700 14px/1.2 Georgia,serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+    nav{display:flex;gap:22px;font-size:13px}
+    nav a{text-decoration:none;color:#dbe5ed}
+    nav a:hover{color:#fff}
+    .hero{background:linear-gradient(130deg,rgba(7,29,53,.99),rgba(18,63,104,.94));color:#fff;padding:102px 0 92px;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:540px;height:540px;border:1px solid rgba(201,163,76,.30);border-radius:50%;right:-170px;top:-250px;box-shadow:0 0 0 70px rgba(201,163,76,.06),0 0 0 140px rgba(201,163,76,.035)}
+    .hero .wrap{position:relative;z-index:1}
+    .eyebrow{color:#a97715;text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:800}
+    .hero .eyebrow,.dark .eyebrow{color:#e1c476}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+    h1{font-size:clamp(44px,7vw,78px);line-height:1.01;max-width:980px;margin:14px 0 22px;font-weight:500;letter-spacing:-.03em}
+    h1 span{display:block;color:var(--gold-soft);font-size:.48em;line-height:1.2;letter-spacing:.01em;margin-top:12px}
+    h2{font-size:clamp(32px,4vw,48px);line-height:1.12;margin:8px 0 18px;color:var(--navy);font-weight:500}
+    h3{color:var(--navy)}
+    .lead{font:21px/1.55 Georgia,serif;max-width:840px;color:#dbe5ed}
+    .byline{margin-top:28px;color:#b9c7d2;font-size:14px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:1px solid var(--gold);text-decoration:none;font-size:13px;font-weight:800;letter-spacing:.03em}
+    .btn.gold{background:var(--gold);color:var(--navy)}
+    .btn.ghost{color:#fff}
+    section{padding:78px 0}
+    section.white{background:#fff}
+    section.dark{background:var(--navy);color:#fff}
+    section.dark h2{color:#fff}
+    .intro{max-width:860px;color:var(--muted);font-size:18px}
+    .dark .intro{color:#c8d3dc}
+    .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:38px}
+    .principle{background:#fff;padding:30px 27px;min-height:235px}
+    .principle b{display:block;color:var(--gold);font-size:12px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}
+    .principle h3{font-size:27px;margin:0 0 10px;font-weight:500}
+    .principle p{margin:0;color:var(--muted);font-size:14px}
+    .feature{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:stretch;margin-top:38px}
+    .main-paper,.facts{background:#fff;border-top:4px solid var(--gold);box-shadow:var(--shadow);padding:34px}
+    .main-paper h3{font-size:29px;margin:0 0 10px}
+    .main-paper p{color:var(--muted)}
+    .facts{background:var(--navy);color:#fff;border-top-color:var(--blue)}
+    .facts div{display:flex;justify-content:space-between;gap:15px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+    .facts b{font-size:28px;font-family:Georgia,serif;color:#e1c476}
+    .facts span{font-size:13px;color:#c5d0d9;text-align:right}
+    .links{display:flex;flex-wrap:wrap;gap:14px;margin-top:auto}
+    .links a{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--blue);text-decoration:none}
+    .links a:hover{text-decoration:underline}
+    .movements{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+    .movement{border-top:2px solid var(--gold);padding:24px;background:rgba(255,255,255,.06)}
+    .movement .roman{font:600 42px/1 Georgia,serif;color:var(--gold-soft)}
+    .movement h3{color:#fff;font-size:22px;margin:14px 0 8px}
+    .movement p{color:#c8d3dc;font-size:14px;margin:0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:28px}
+    .search{width:min(360px,100%);padding:12px 14px;border:1px solid var(--line);background:#fff;font:inherit}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:#fff;border:1px solid var(--line);padding:25px;display:flex;flex-direction:column;min-height:315px}
+    .card:hover{border-color:#b99b55;box-shadow:0 10px 26px rgba(7,29,53,.08);transform:translateY(-2px)}
+    .card .tag{font-size:11px;color:#8a6b27;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+    .card h3{font-size:23px;line-height:1.22;margin:8px 0}
+    .card p{color:var(--muted);font-size:14px;margin:0 0 15px}
+    .reading{font-size:12px;color:#6e7780;border-left:2px solid var(--gold);padding-left:10px;margin-bottom:18px}
+    .reading strong{color:var(--navy)}
+    .stage{margin:34px 0 12px;padding:13px 0;border-bottom:2px solid var(--navy);color:var(--navy);font:600 23px Georgia,serif}
+    .method{counter-reset:method;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:34px}
+    .method div{counter-increment:method;background:#fff;border-top:3px solid var(--gold);padding:20px;min-height:185px}
+    .method div:before{content:"0" counter(method);display:block;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.12em;margin-bottom:12px}
+    .method b{display:block;color:var(--navy);font:600 18px Georgia,serif;margin-bottom:8px}
+    .method span{color:var(--muted);font-size:13px}
+    .library{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+    .library a{background:var(--soft);border-left:3px solid var(--gold);padding:15px 17px;text-decoration:none;color:var(--navy);font:600 15px Georgia,serif}
+    .library a:hover{background:#e5edf1}
+    .invitation{font:24px/1.55 Georgia,serif;max-width:900px;color:#d9e3ea;margin:28px 0 0}
+    footer{background:#041426;color:#cad5de;padding:46px 0;font-size:13px}
+    footer .wrap{display:flex;justify-content:space-between;gap:30px}
+    footer a{color:#fff}
+    .hidden{display:none!important}
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.method{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:800px){.feature,.principles,.movements{grid-template-columns:1fr}.library{grid-template-columns:1fr}.method{grid-template-columns:repeat(2,1fr)}nav{display:none}}
+    @media(max-width:560px){.wrap{width:min(100% - 26px,1180px)}.hero{padding:68px 0}section{padding:56px 0}.grid,.method{grid-template-columns:1fr}.section-head,footer .wrap{display:block}.search{margin-top:16px}.card{min-height:0}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#top">Integrated Autonomous Intelligence</a>
+      <nav aria-label="Primary">
+        <a href="#thesis">Thesis</a>
+        <a href="#journey">Journey</a>
+        <a href="#labs">Nine Labs</a>
+        <a href="#readings">Readings</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Cambridge Judge Business School · Teaching &amp; Research Collection</div>
+        <h1>Integrated Autonomous Intelligence <span>The Autonomous System Sandbox</span></h1>
+        <p class="lead">A language model can produce an answer. An autonomous system can remember, retrieve, reason, use tools, alter persistent state, and participate in consequential work. This repository opens that system, piece by piece, so that we can understand what it is, govern what it may do, and only then learn to create it responsibly.</p>
+        <p class="byline">Alejandro Reynoso · Judge Business School, University of Cambridge</p>
+        <div class="actions">
+          <a class="btn gold" href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/MAIN%20PAPER%20AUTONOMOUS%20SYSTEMS%20SANDBOX.pdf">Begin with the capstone</a>
+          <a class="btn ghost" href="https://github.com/alexdibol/ai_autonomous_systems">Explore the repository</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="thesis">
+      <div class="wrap">
+        <div class="eyebrow">The governing proposition</div>
+        <h2>Understand first. Govern next. Create responsibly.</h2>
+        <p class="intro">The central challenge of autonomous intelligence is not simply to make a model more capable. It is to design the full architecture around it: purpose, memory, context, skills, tools, interfaces, orchestration, authority, verification, and audit. Only when these components are visible can their interactions be governed. Only when they are governed can they be recombined into systems worthy of institutional trust.</p>
+        <div class="principles">
+          <article class="principle"><b>01 · Understand</b><h3>Make the hidden system visible</h3><p>Separate the model from memory, retrieval, tools, skills, state, orchestration, verification, and audit. Learn to explain not only the answer, but the architecture that made the answer possible.</p></article>
+          <article class="principle"><b>02 · Govern</b><h3>Turn capability into accountable authority</h3><p>Define legitimate transitions, evidence requirements, permissions, contradiction gates, human-owned decisions, and reconstructable audit trails. Capability must never become authority by accident.</p></article>
+          <article class="principle"><b>03 · Create</b><h3>Build bounded systems that deserve trust</h3><p>Recombine the components in a new domain while preserving provenance, verification, deliberate non-action, human control, and the ability to stop, challenge, reverse, and improve the system.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="white">
+      <div class="wrap">
+        <div class="eyebrow">The intellectual doorway</div>
+        <h2>Begin with the capstone monograph</h2>
+        <div class="feature">
+          <article class="main-paper">
+            <div class="eyebrow">Main paper</div>
+            <h3>The Autonomous System Sandbox</h3>
+            <p><em>A Pedagogical Journey from External Memory to Governed Institutional Agency</em></p>
+            <p>The capstone explains why the nine laboratories belong together and why papers and notebooks perform different intellectual functions. Its thesis is precise: autonomy does not emerge from a powerful model alone. It emerges from a disciplined composition of memory, context, tools, permissions, verification, and accountability. Read it before the laboratories, keep it beside you while experimenting, and return to it after Lab 09—when every abstraction will have become observable in code, state, artifacts, gates, and failures.</p>
+            <div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/raw/main/MAIN%20PAPER%20AUTONOMOUS%20SYSTEMS%20SANDBOX.pdf">Open PDF</a><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/MAIN%20PAPER%20AUTONOMOUS%20SYSTEMS%20SANDBOX.pdf">View on GitHub</a></div>
+          </article>
+          <aside class="facts">
+            <div><b>1</b><span>Integrating capstone</span></div>
+            <div><b>13</b><span>Conceptual readings</span></div>
+            <div><b>9</b><span>Laboratory papers</span></div>
+            <div><b>50</b><span>Executable notebooks</span></div>
+            <div><b>3</b><span>Movements: Understand, Govern, Create</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="journey">
+      <div class="wrap">
+        <div class="eyebrow">The learning journey</div>
+        <h2>Nine laboratories. Three movements. One cumulative architecture.</h2>
+        <p class="intro">The sequence begins with the smallest external-memory loop and ends with governed exobrains operating in tax, law, and investment banking. Each movement corrects a common misconception about autonomous AI.</p>
+        <div class="movements">
+          <article class="movement"><div class="roman">I</div><h3>Cognitive substrate · Labs 01–03</h3><p>Construct external memory, disassemble the agent into its layers, and compile a digital estate into a navigable knowledge surface. The model is not the whole system.</p></article>
+          <article class="movement"><div class="roman">II</div><h3>From intelligence to operation · Labs 04–06</h3><p>Observe autonomous coding, separate prediction from reasoning and agency, and build a recurrent governed workflow. Fluent output is not agency.</p></article>
+          <article class="movement"><div class="roman">III</div><h3>Institutional exobrains · Labs 07–09</h3><p>Apply the architecture where evidence, permissions, professional judgment, temporal change, and accountability cannot be separated. Capability is not authority.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="labs">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">The executable curriculum</div><h2>Enter the Autonomous System Sandbox</h2></div>
+          <input class="search" id="search" type="search" placeholder="Filter the nine laboratories…" aria-label="Filter laboratories">
+        </div>
+        <p class="intro">Every laboratory joins three layers of learning: conceptual readings establish the vocabulary, a monograph assembles the architecture, and executable notebooks make its behavior visible and perturbable. Do not merely run the code. Trace a state transition, change an assumption, block a permission, corrupt an identity, and observe how the system responds.</p>
+
+        <h3 class="stage">Movement I · Build the cognitive substrate</h3>
+        <div class="grid lab-grid">
+          <article class="card lab"><span class="tag">Lab 01 · 4 notebooks</span><h3>Foundations of the Second Brain Paradigm</h3><p>Begin with the smallest useful external-memory loop. Observe how persistent memory changes what an intelligent system can retrieve, retain, and build upon.</p><div class="reading"><strong>Read with:</strong> The Exo Brain · The Vault-RAG · The Living Vault</div><div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/papers_sandbox/LAB%201%20FOUNDATIONS%20OF%20THE%20SECOND%20BRAIN%20PARADIGM.pdf">Paper</a><a href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox/LAB%2001%20-%20FOUNDATIONS%20OF%20THE%20SECOND%20BRAIN%20PARADIGM">Notebooks</a><a href="https://colab.research.google.com/github/alexdibol/ai_autonomous_systems/blob/main/notebooks_sandbox/LAB%2001%20-%20FOUNDATIONS%20OF%20THE%20SECOND%20BRAIN%20PARADIGM/LAB01_NB01_second_brain_colab_1.ipynb">Start in Colab</a></div></article>
+          <article class="card lab"><span class="tag">Lab 02 · 4 notebooks</span><h3>The Anatomy of an Autonomous Agent</h3><p>Open the black box. Distinguish models, protocols, skills, tools, interfaces, orchestration, state, verification, and the authority envelope around them.</p><div class="reading"><strong>Read with:</strong> From Intelligence to Governance · Infrastructure · MCP · Cowork</div><div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/papers_sandbox/LAB%202%20THE%20MASTER%20CARPENTER.pdf">Paper</a><a href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox/LAB%2002%20-%20THE%20ANATOMY%20OF%20AN%20AUTONOMOUS%20AGENT">Notebooks</a><a href="https://colab.research.google.com/github/alexdibol/ai_autonomous_systems/blob/main/notebooks_sandbox/LAB%2002%20-%20THE%20ANATOMY%20OF%20AN%20AUTONOMOUS%20AGENT/LAB02_NB01_The_MCP_Case_for_Yahoo_Finance.ipynb">Start in Colab</a></div></article>
+          <article class="card lab"><span class="tag">Lab 03 · 1 notebook</span><h3>The Obsidian Vault Constructor</h3><p>Transform a digital estate into structured, navigable knowledge while preserving identity, relationships, provenance, and the boundary between source and inference.</p><div class="reading"><strong>Read with:</strong> Building an Obsidian Vault · The Vault-RAG · The Living Vault</div><div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/papers_sandbox/LAB%203%20THE%20OBSIDIAN%20CONSTRUCTOR%20LATEX.pdf">Paper</a><a href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox/LAB%2003%20-%20THE%20OBSIDIAN%20VAULT%20CONSTRUCTOR">Notebook</a><a href="https://colab.research.google.com/github/alexdibol/ai_autonomous_systems/blob/main/notebooks_sandbox/LAB%2003%20-%20THE%20OBSIDIAN%20VAULT%20CONSTRUCTOR/LAB03_NB01_GENERATING_AN_OBSIDIAN_VAULT.ipynb">Open in Colab</a></div></article>
+        </div>
+
+        <h3 class="stage">Movement II · Move from intelligence to governed operation</h3>
+        <div class="grid lab-grid">
+          <article class="card lab"><span class="tag">Lab 04 · 2 notebooks</span><h3>Finance Apps Created by Autonomous Coding</h3><p>Study autonomous coding through algorithmic trading and tax-planning applications. The object of study is not only the program, but the process that produced and tested it.</p><div class="reading"><strong>Read with:</strong> Antigravity and Algorithmic Trading · Antigravity and Tax Planning</div><div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/papers_sandbox/LAB%204%20ALGO%20TRADING%20WITH%20ANTIGRAVITY.pdf">Paper</a><a href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox/LAB%2004%20-%20FINANCE%20APPS%20CREATED%20BY%20AUTONOMOUS%20CODING">Notebooks</a><a href="https://colab.research.google.com/github/alexdibol/ai_autonomous_systems/blob/main/notebooks_sandbox/LAB%2004%20-%20FINANCE%20APPS%20CREATED%20BY%20AUTONOMOUS%20CODING/LAB04_NB01_ALGO_TRADING_WITH_ANTIGRAVITY.ipynb">Start in Colab</a></div></article>
+          <article class="card lab"><span class="tag">Lab 05 · 2 notebooks</span><h3>From Intelligence to Agency: Sherlock AI</h3><p>Use Sherlock Holmes as a conceptual ladder: prediction continues text, reasoning forms and tests hypotheses, and agency organizes work across time toward a goal.</p><div class="reading"><strong>Read with:</strong> From Prediction to Reasoning to Agency with Holmes</div><div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/papers_sandbox/LAB%205%20FROM%20INTELLIGENCE%20TO%20AGENCY%20SHERLOCK%20AI.pdf">Paper</a><a href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox/LAB%2005%20-%20FROM%20INTELLIGENCE%20TO%20AGENCY%20SHERLOCK%20AI">Notebooks</a><a href="https://colab.research.google.com/github/alexdibol/ai_autonomous_systems/blob/main/notebooks_sandbox/LAB%2005%20-%20FROM%20INTELLIGENCE%20TO%20AGENCY%20SHERLOCK%20AI/LAB05_NB01_Sherlock_Holmes_Next_Sentence_Transformer.ipynb">Start in Colab</a></div></article>
+          <article class="card lab"><span class="tag">Lab 06 · 4 notebooks</span><h3>The Financial Reporter Autonomous Workflow</h3><p>Build a recurrent governed research loop with explicit tool contracts, temporal memory, scheduled updates, verification, output control, and auditable write-back.</p><div class="reading"><strong>Read with:</strong> MCP Protocol · The Living Vault · The Governed Research Loop</div><div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/papers_sandbox/LAB%206%20FROM%20PROMPT%20TO%20GOVERNED%20AGENCY%20THE%20FINANCIAL%20REPORTER.pdf">Paper</a><a href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox/LAB%2006%20-%20THE%20FINANCIAL%20REPORTER%20AUTONOMOUS%20WORKFLOW">Notebooks</a><a href="https://colab.research.google.com/github/alexdibol/ai_autonomous_systems/blob/main/notebooks_sandbox/LAB%2006%20-%20THE%20FINANCIAL%20REPORTER%20AUTONOMOUS%20WORKFLOW/LAB06_NB01_Governed_Market_Memory_MCP_Classroom_root.ipynb">Start in Colab</a></div></article>
+        </div>
+
+        <h3 class="stage">Movement III · Build governed institutional exobrains</h3>
+        <div class="grid lab-grid">
+          <article class="card lab"><span class="tag">Lab 07 · 11 notebooks</span><h3>The Tax Planning Exobrain</h3><p>Model a changing multi-jurisdictional environment in which law, entity structure, evidence, time, recommendations, and human approval must remain traceable.</p><div class="reading"><strong>Read with:</strong> The Exo Brain · The Autonomous Enterprise Engine · Antigravity and Tax Planning</div><div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/papers_sandbox/LAB%207%20THE%20TAX%20PLANNING%20EXO%20BRAIN.pdf">Paper</a><a href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox/LAB%2007%20-%20THE%20TAX%20PLANNING%20EXO%20BRAIN">Notebooks</a><a href="https://colab.research.google.com/github/alexdibol/ai_autonomous_systems/blob/main/notebooks_sandbox/LAB%2007%20-%20THE%20TAX%20PLANNING%20EXO%20BRAIN/LAB07_NB01_Baby_Step_00_Tax_Planning_ExoBrain.ipynb">Start in Colab</a></div></article>
+          <article class="card lab"><span class="tag">Lab 08 · 11 notebooks</span><h3>The Civil Law Exobrain</h3><p>Translate legal work into a governed knowledge and reasoning environment where facts, authorities, hypotheses, procedural state, and professional judgment remain distinct.</p><div class="reading"><strong>Read with:</strong> The Exo Brain · Disassembling the Autonomous Enterprise Engine</div><div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/papers_sandbox/LAB%208%20THE%20CIVIL%20LAW%20EXOBRAIN.pdf">Paper</a><a href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox/LAB%2008%20-%20THE%20CIVIL%20LAW%20EXO%20BRAIN">Notebooks</a><a href="https://colab.research.google.com/github/alexdibol/ai_autonomous_systems/blob/main/notebooks_sandbox/LAB%2008%20-%20THE%20CIVIL%20LAW%20EXO%20BRAIN/LAB08_NB01_Baby_Step_00_Build_Original_Civil_Litigation_Vault.ipynb">Start in Colab</a></div></article>
+          <article class="card lab"><span class="tag">Lab 09 · 11 notebooks</span><h3>The Investment Banking Exobrain</h3><p>Bring the full architecture into strategic finance: opportunity memory, comparable evidence, evolving hypotheses, committee judgment, monitoring, and decision accountability.</p><div class="reading"><strong>Read with:</strong> The Exo Brain · Disassembling the Autonomous Enterprise Engine</div><div class="links"><a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/papers_sandbox/LAB%209%20THE%20INVESTMENT%20BANK%20EXOBRAIN.pdf">Paper</a><a href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox/LAB%2009%20-%20THE%20INVESTMENT%20BANKING%20EXOBRAIN">Notebooks</a><a href="https://colab.research.google.com/github/alexdibol/ai_autonomous_systems/blob/main/notebooks_sandbox/LAB%2009%20-%20THE%20INVESTMENT%20BANKING%20EXOBRAIN/LAB09_NB01_Investment_Banking_Vault_Initial_Creation_Transparent.ipynb">Start in Colab</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="white">
+      <div class="wrap">
+        <div class="eyebrow">Laboratory discipline</div>
+        <h2>Do not merely make the notebook run</h2>
+        <p class="intro">The deeper test is whether you can predict what will break before you remove memory, retrieval, verification, contradiction handling, or an authorization gate. Use the same five passes in every laboratory.</p>
+        <div class="method">
+          <div><b>Conceptual pass</b><span>Read the mapped sources and identify the system’s principal objects and relationships.</span></div>
+          <div><b>Baseline pass</b><span>Run the notebooks in order and inventory every artifact, state change, and validation.</span></div>
+          <div><b>Trace pass</b><span>Choose one output and reconstruct its lineage from trigger and context to verification and use.</span></div>
+          <div><b>Perturbation pass</b><span>Change one source, identity, policy, assumption, or evidence item and observe the response.</span></div>
+          <div><b>Governance pass</b><span>Separate what is technically possible from what is institutionally permitted and human-owned.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="readings">
+      <div class="wrap">
+        <div class="eyebrow">The conceptual library</div>
+        <h2>Thirteen readings that make the architecture legible</h2>
+        <p class="intro">The readings are not prerequisites to be completed once and left behind. They are conceptual instruments to revisit as the laboratories expose memory, agency, protocols, knowledge architecture, recurring research, autonomous coding, and exobrains in operation.</p>
+        <div class="library">
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/01%20%E2%80%94%20FROM%20INTELLIGENCE%20TO%20GOVERNANCE.pdf">01 — From Intelligence to Governance</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/02%20%E2%80%94%20THE%20EXO%20BRAIN.pdf">02 — The Exo Brain</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/03%20%E2%80%94%20FROM%20PREDICTION%20TO%20REASONING%20TO%20AGENCY%20WITH%20HOLMES.pdf">03 — From Prediction to Reasoning to Agency with Holmes</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/04%20%E2%80%94%20THE%20INFRASTRUCTURE%20OF%20AUTONOMOUS%20INTELLIGENCE.pdf">04 — The Infrastructure of Autonomous Intelligence</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/05%20%E2%80%94%20THE%20ROLE%20OF%20MCP%20PROTOCOL%20IN%20AUTONOMOUS%20SYSTEMS.pdf">05 — The Role of MCP Protocol in Autonomous Systems</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/06%20%E2%80%94%20DISASSEMBLING%20THE%20AUTONOMOUS%20ENTERPRISE%20ENGINE.pdf">06 — Disassembling the Autonomous Enterprise Engine</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/07%20%E2%80%94%20THE%20CASE%20OF%20COWORK.pdf">07 — The Case of Cowork</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/08%20%E2%80%94%20BUILDING%20AN%20OBSIDIAN%20VAULT.pdf">08 — Building an Obsidian Vault</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/09%20%E2%80%94%20THE%20VAULT%20RAG%20FOR%20ACADEMIC%20RESEARCH.pdf">09 — The Vault-RAG for Academic Research</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/10%20%E2%80%94%20THE%20LIVING%20VAULT.pdf">10 — The Living Vault</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/11%20%E2%80%94%20THE%20GOVERNED%20RESEARCH%20LOOP.pdf">11 — The Governed Research Loop</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/12%20%E2%80%94%20ANTIGRAVITY%20AND%20ALGORITHMIC%20TRADING.pdf">12 — Antigravity and Algorithmic Trading</a>
+          <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/readings/13%20%E2%80%94%20ANTIGRAVITY%20AND%20TAX%20PLANNING.pdf">13 — Antigravity and Tax Planning</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="wrap">
+        <div class="eyebrow">From learner to creator</div>
+        <h2>The final objective is architectural judgment</h2>
+        <p class="invitation">The future of artificial intelligence will not be shaped only by stronger models. It will be shaped by our ability to build institutions that can remember without contaminating memory, reason without concealing uncertainty, act without exceeding authority, and learn without destroying provenance. This collection is an invitation to move beyond fascination with output and toward mastery of architecture: understand the components, govern their relationships, and then create systems worthy of institutional trust.</p>
+        <div class="actions"><a class="btn gold" href="https://github.com/alexdibol/ai_autonomous_systems#readme">Read the complete course guide</a><a class="btn ghost" href="https://github.com/alexdibol/ai_autonomous_systems/tree/main/notebooks_sandbox">Enter the notebook sandbox</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div><strong>Integrated Autonomous Intelligence</strong><br>The Autonomous System Sandbox · Research and teaching collection.</div>
+      <div>© 2026 Alejandro Reynoso · <a href="https://github.com/alexdibol/ai_autonomous_systems">GitHub repository</a> · <a href="https://github.com/alexdibol/ai_autonomous_systems/blob/main/LICENSE">MIT License</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const search = document.getElementById("search");
+    search.addEventListener("input", () => {
+      const query = search.value.toLowerCase().trim();
+      document.querySelectorAll(".lab").forEach(card => {
+        card.classList.toggle("hidden", query && !card.textContent.toLowerCase().includes(query));
+      });
+    });
+  </script>
+</body>
+</html>

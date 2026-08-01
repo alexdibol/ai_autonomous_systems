@@ -1,42 +1,63 @@
-# Integrated Autonomous Intelligence
+# Autonomous Systems
 
-## The Autonomous System Sandbox
+### A pedagogical journey from understanding to governed creation
 
-### Understand first. Govern next. Create responsibly.
+*An Integrated Autonomous Intelligence teaching and research collection developed in the context of Alejandro Reynoso’s work at Cambridge Judge Business School, University of Cambridge.*
 
-The decisive question is no longer whether artificial intelligence can produce an impressive answer. It is whether we can understand, govern, and deliberately create systems that remember, retrieve, reason, use tools, update persistent state, and participate in consequential institutional work.
+The decisive frontier in artificial intelligence is no longer the isolated quality of a model’s answer. It is the design of systems that can pursue objectives across time: systems that remember, retrieve, reason, use tools, coordinate workflows, update persistent state, and participate in consequential institutional work.
 
-This repository is a practical response to that question.
+That frontier demands a particular order of learning.
 
-It is not a collection of disconnected papers and notebooks. It is a staged learning environment in which the hidden architecture of autonomous systems is made visible. Across a capstone monograph, 13 conceptual readings, nine laboratory papers, and 50 executable Jupyter notebooks, the reader moves from the smallest external-memory loop to governed exobrains for tax planning, civil law, and investment banking.
+> **First understand the architecture. Then govern its memory, authority, and state transitions. Only then create autonomous systems responsibly.**
 
-> **The governing claim of the project:** we must first **understand** autonomous systems, then learn to **govern** their state transitions and authority, and only then become capable of **creating** them responsibly.
+This repository is organized as a cumulative pedagogical journey—not as a catalogue of files. The capstone provides the map. The readings develop the conceptual language required to interpret that map. The Autonomous Systems Sandbox then turns the ideas into observable, executable, and challengeable systems.
 
-An autonomous system should not be judged only by the fluency of its output. We must also be able to see where its context came from, how its state changed, what evidence supported its conclusions, why an action was permitted, what remained prohibited, and where the system was designed to stop.
+## Step 1 — Begin with the capstone
 
-## Begin with the capstone monograph
+The best entry point is [*Autonomous Systems: A Pedagogical Journey from External Memory to Governed Institutional Agency*](MAIN%20PAPER%20AUTONOMOUS%20SYSTEMS%20SANDBOX.pdf).
 
-The best entry point is [*The Autonomous System Sandbox: A Pedagogical Journey from External Memory to Governed Institutional Agency*](MAIN%20PAPER%20AUTONOMOUS%20SYSTEMS%20SANDBOX.pdf).
-
-The capstone establishes the intellectual architecture of the collection. It explains why the nine laboratories belong together, how papers and notebooks perform different epistemic functions, and why greater capability must never be confused with greater authority. Its central insight is that useful autonomy does not arise from a powerful model alone. It emerges from the disciplined composition of:
+The capstone is the door of entry to the collection. It establishes the intellectual architecture of autonomous systems and the sequence through which that architecture should be learned. It explains why the nine laboratories belong together, how papers and notebooks perform different epistemic functions, and why greater capability must never be confused with greater authority. Its central insight is that useful autonomy does not arise from a powerful model alone. It emerges from the disciplined composition of:
 
 > **Purpose + Memory + Context + Skills + Tools + Interfaces + Orchestration + Authority + Verification + Audit**
 
-Read the capstone once before entering the laboratories, consult it while working through the experiments, and return to it after Lab 09. On the second reading, its argument will no longer be merely conceptual: each component will have become observable in code, state, artifacts, permissions, tests, and failures.
+Read the capstone before opening the readings or notebooks. Use it to see the whole territory; then consult it while studying the concepts and working through the experiments, and return to it after Lab 09. On the second reading, its argument will no longer be merely conceptual: each component will have become observable in code, state, artifacts, permissions, tests, and failures.
 
-## The purpose of the repository
+## The pedagogical journey
 
-The repository follows a three-stage intellectual and practical progression.
+The repository deliberately moves from synthesis to conceptual depth and then to experimentation.
 
-| Stage | Central question | What the repository develops |
+| Step | Point of entry | Pedagogical function |
+|---|---|---|
+| **1 — Capstone** | [*Autonomous Systems*](MAIN%20PAPER%20AUTONOMOUS%20SYSTEMS%20SANDBOX.pdf) | See the complete architecture before studying its components. The capstone establishes the central problem, the vocabulary, the governance claim, and the destination of the journey. |
+| **2 — Readings** | [Conceptual readings](readings/) | Develop the conceptual lenses needed to distinguish intelligence from agency, memory from context, tools from authority, and output from accountable action. |
+| **3 — Sandbox** | [Laboratory papers](papers_sandbox/) + [Executable notebooks](notebooks_sandbox/) | Turn abstraction into experience. Each laboratory pairs an explanatory paper with executable notebooks that expose architecture, state, permissions, failures, and audit evidence. |
+
+This order matters. Entering through the capstone prevents the details from becoming disconnected. Reading before experimentation gives the notebooks meaning. Experimenting after reading converts conceptual understanding into architectural intuition.
+
+The journey follows the governing sequence:
+
+| Stage | Central question | What the learner develops |
 |---|---|---|
 | **Understand** | What is an autonomous system actually made of? | The ability to distinguish models, memory, retrieval, skills, tools, interfaces, orchestration, persistent state, verification, and audit. |
 | **Govern** | Which transitions are legitimate, and who has authority over them? | Explicit policies, evidence requirements, authorization gates, contradiction handling, human-owned decisions, audit trails, and architectures of deliberate non-action. |
 | **Create** | How can these components be recombined safely in a new domain? | The capacity to design bounded autonomous systems whose behavior can be reconstructed, challenged, stopped, and improved. |
 
-This ordering is fundamental. Creation without understanding produces opacity. Capability without governance risks converting analytical momentum into unauthorized action. The objective is not maximum autonomy; it is **maximum useful intelligence within a defensible architecture of purpose, evidence, memory, permission, and accountability**.
+Creation without understanding produces opacity. Capability without governance risks converting analytical momentum into unauthorized action. The objective is not maximum autonomy; it is **maximum useful intelligence within a defensible architecture of purpose, evidence, memory, permission, and accountability**.
 
-## Why a sandbox?
+## Step 2 — Build the conceptual architecture
+
+The 13 readings are the first part of the curriculum after the capstone. They should be approached as a set of conceptual lenses, not as an isolated bibliography.
+
+| Conceptual lens | Readings | Question carried into the sandbox |
+|---|---|---|
+| **Architecture and governance** | [01 — From Intelligence to Governance](readings/01%20%E2%80%94%20FROM%20INTELLIGENCE%20TO%20GOVERNANCE.pdf) · [04 — Infrastructure of Autonomous Intelligence](readings/04%20%E2%80%94%20THE%20INFRASTRUCTURE%20OF%20AUTONOMOUS%20INTELLIGENCE.pdf) · [05 — MCP Protocol](readings/05%20%E2%80%94%20THE%20ROLE%20OF%20MCP%20PROTOCOL%20IN%20AUTONOMOUS%20SYSTEMS.pdf) · [06 — Autonomous Enterprise Engine](readings/06%20%E2%80%94%20DISASSEMBLING%20THE%20AUTONOMOUS%20ENTERPRISE%20ENGINE.pdf) · [07 — Cowork](readings/07%20%E2%80%94%20THE%20CASE%20OF%20COWORK.pdf) | What components surround the model, and where does legitimate authority reside? |
+| **Memory and knowledge** | [02 — The Exo Brain](readings/02%20%E2%80%94%20THE%20EXO%20BRAIN.pdf) · [08 — Building an Obsidian Vault](readings/08%20%E2%80%94%20BUILDING%20AN%20OBSIDIAN%20VAULT.pdf) · [09 — Vault-RAG](readings/09%20%E2%80%94%20THE%20VAULT%20RAG%20FOR%20ACADEMIC%20RESEARCH.pdf) · [10 — The Living Vault](readings/10%20%E2%80%94%20THE%20LIVING%20VAULT.pdf) | How does persistent, structured, provenance-preserving memory change the system? |
+| **Reasoning and recurrent agency** | [03 — Prediction, Reasoning, and Agency with Holmes](readings/03%20%E2%80%94%20FROM%20PREDICTION%20TO%20REASONING%20TO%20AGENCY%20WITH%20HOLMES.pdf) · [11 — The Governed Research Loop](readings/11%20%E2%80%94%20THE%20GOVERNED%20RESEARCH%20LOOP.pdf) | When does intelligent transformation become goal-directed work across time? |
+| **Autonomous creation in finance** | [12 — Antigravity and Algorithmic Trading](readings/12%20%E2%80%94%20ANTIGRAVITY%20AND%20ALGORITHMIC%20TRADING.pdf) · [13 — Antigravity and Tax Planning](readings/13%20%E2%80%94%20ANTIGRAVITY%20AND%20TAX%20PLANNING.pdf) | What changes when autonomous systems begin to design and test consequential applications? |
+
+The readings are meant to travel with the learner. Read the relevant set before each laboratory, then return to it after running the notebooks. The second reading should be different from the first: the abstractions will now correspond to retrieved context, tool calls, state files, gates, permissions, tests, and audit trails that you have actually observed.
+
+## Step 3 — Enter the Autonomous Systems Sandbox
 
 Production AI platforms compress complex systems into apparently simple interactions. The sandbox slows those systems down.
 
@@ -50,7 +71,7 @@ The papers and notebooks therefore play complementary roles:
 
 The notebooks are not appendices to the papers. They are the experimental counterpart of the argument. The papers explain *why* the architecture matters; the notebooks reveal *how* it behaves.
 
-## The nine-laboratory journey
+### The nine-laboratory journey
 
 The curriculum unfolds in three movements.
 
@@ -129,16 +150,16 @@ The capstone succeeds when another person can explain how it worked, identify wh
 
 | Location | Contents | Role in the journey |
 |---|---|---|
-| [`MAIN PAPER AUTONOMOUS SYSTEMS SANDBOX.pdf`](MAIN%20PAPER%20AUTONOMOUS%20SYSTEMS%20SANDBOX.pdf) | Capstone umbrella monograph | Establishes the thesis and integrates the nine-lab journey. |
+| [MAIN PAPER AUTONOMOUS SYSTEMS SANDBOX.pdf](MAIN%20PAPER%20AUTONOMOUS%20SYSTEMS%20SANDBOX.pdf) | *Autonomous Systems* capstone | The intellectual doorway: establishes the thesis and integrates the complete journey. |
 | [`readings/`](readings/) | 13 conceptual papers | Builds vocabulary and isolates the foundational ideas. |
 | [`papers_sandbox/`](papers_sandbox/) | 9 laboratory monographs | Explains the architecture and pedagogical purpose of each lab. |
 | [`notebooks_sandbox/`](notebooks_sandbox/) | 50 Jupyter notebooks organized by lab | Makes the architecture executable, inspectable, and testable. |
 
-## A final invitation
+## The destination
 
 The future of artificial intelligence will not be shaped only by stronger models. It will be shaped by our ability to embed models in institutions that can remember without contaminating memory, reason without concealing uncertainty, act without exceeding authority, and learn without destroying provenance.
 
-This repository is an invitation to move beyond fascination with output and toward mastery of architecture. **Understand the components. Govern their relationships. Then create systems worthy of institutional trust.**
+This journey begins with the whole, deepens through the readings, and becomes tangible in the sandbox. It is an invitation to move beyond fascination with output and toward mastery of architecture. **Understand the components. Govern their relationships. Then create systems worthy of institutional trust.**
 
 ## Author and license
 
